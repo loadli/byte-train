@@ -2,13 +2,11 @@ const Koa = require('koa')
 const app = new Koa()
 const logger = require('koa-logger')
 const json = require('koa-json')
-const path = require('path');
 const koaBody = require('koa-body');
-const koaStatic = require('koa-static');
 const todoRouter = require('./routers/todo');
 const views = require('koa-views')
 const onerror = require('koa-onerror');
-  
+
 const index = require('./routers/index');
 const users = require('./routers/users');
 
