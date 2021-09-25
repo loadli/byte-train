@@ -33,7 +33,7 @@ class newsService {
     read,
     like,
   }) {
-    const data = await newsTable.save({
+    return await newsTable.save({
       title,
       description,
       month,
