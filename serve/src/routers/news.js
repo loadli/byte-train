@@ -4,7 +4,7 @@ const router = Router({
   prefix: '/api/todo'
 });
 
-const todoController = require('../controllers/todoController');
+const todoController = require('../controllers/newsController');
 
 // 组装路由
 router.put('/:id/done', todoController.done);

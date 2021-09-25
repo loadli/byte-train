@@ -1,4 +1,4 @@
-const todoTable = require('../models/todoTable');
+const todoTable = require('../models/newsTable');
 const inspirecloud = require('@byteinspire/api');
 const ObjectId = inspirecloud.db.ObjectId;
 
@@ -56,7 +56,7 @@ class TodoService {
   async update(id, updater) {
     const todo = await todoTable.where({_id: ObjectId(id)}).findOne();
     if (!todo) {
-      const error = new Error(`todo:${id} not found`);
+      const error = new Error(`news:${id} not found`);
       error.status = 404;
       throw error;
     }

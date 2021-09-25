@@ -1,4 +1,4 @@
-const todoService = require('../services/todoService');
+const todoService = require('../services/newsService');
 
 /**
  * TodoController
