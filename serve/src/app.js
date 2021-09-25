@@ -3,7 +3,7 @@ const app = new Koa()
 const logger = require('koa-logger')
 const json = require('koa-json')
 const koaBody = require('koa-body');
-const todoRouter = require('./routers/todo');
+const newsRouter = require('./routers/news');
 const views = require('koa-views')
 const onerror = require('koa-onerror');
 
@@ -63,7 +63,7 @@ app.use(index.routes(), index.allowedMethods());
 app.use(users.routes(), users.allowedMethods());
 
 // 使用待办事项业务路由
-app.use(todoRouter);
+app.use(newsRouter);
 
 
 module.exports = app;

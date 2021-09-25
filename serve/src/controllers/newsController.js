@@ -1,10 +1,5 @@
 const newsService = require('../services/newsService');
 
-/**
- * TodoController
- * Controller 是业务入口，由 HTTP 路由解析后调用
- * 包含待办事项的增删改查功能
- */
 class NewsController {
   async all(ctx) {
     const res = await newsService.all()
@@ -24,12 +19,12 @@ class NewsController {
     }
   }
   async save(ctx) {
-    const { title, description, month, time } = ctx.request.body
-    const res = await newsService.save({})
+    const { title = '', description = '', month = '', time = Date.now() } = ctx.request.body
+    const res = await newsService.save({ title, description, month, time })
     ctx.body = {
       code: "200",
       message: "请求成功",
-      data: addressList,
+      data: res,
   }
   }
 }

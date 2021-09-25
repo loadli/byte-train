@@ -4,7 +4,7 @@ const ObjectId = inspirecloud.db.ObjectId;
 
 class newsService {
   async all() {
-    const data = await newsTable.where()
+    const data = await newsTable.where().find()
     if (!data) {
       const error = new Error(`news:${id} not found`);
       error.status = 404;
@@ -17,7 +17,7 @@ class newsService {
       time: date,
       read,
       like,
-    })
+    }).find()
     if (!data) {
       const error = new Error(`news:${id} not found`);
       error.status = 404;
