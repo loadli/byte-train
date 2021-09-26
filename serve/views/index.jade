@@ -28,13 +28,8 @@ block content
           li 12月
     main.is-8
       ul.date-list
-        li
-          span 2021-09-01
-          a(target="_blank", href="#") 查看日报
-        li
-          span 2021-09-01
-          a(target="_blank", href="#") 查看日报
-        li
-          span 2021-09-01
-          a(target="_blank", href="https://baidu.com") 百度
+        each item in data
+          li
+            span= item.time
+            a(target="_blank", href="#") 查看日报
 
