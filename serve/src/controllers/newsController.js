@@ -10,7 +10,7 @@ class NewsController {
     }
   }
   async daily(ctx) {
-    const { date, read, like } = ctx.request.body
+    const { date, read, like } = ctx.request.query
     const res = await newsService.daily({ date, read, like })
     ctx.body = {
       code: "200",
