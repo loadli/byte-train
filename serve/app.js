@@ -8,7 +8,7 @@ const views = require('koa-views')
 const onerror = require('koa-onerror');
 const koaStatic = require('koa-static');
 const index = require('./src/routers/index');
-const users = require('./src/routers/users');
+const koaCompose = require("koa-compose");
 
 
 // error handler
@@ -60,10 +60,9 @@ app.use(async function errorHandler(ctx, next) {
 // 为应用使用路由定义
 // routes definition
 app.use(index.routes(), index.allowedMethods());
-app.use(users.routes(), users.allowedMethods());
 
 // 使用待办事项业务路由
-app.use(newsRouter);
+app.use(koaCompose([newsRouter]));
 
 
 module.exports = app;
