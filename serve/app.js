@@ -2,21 +2,21 @@ const Koa = require('koa')
 const app = new Koa()
 const logger = require('koa-logger')
 const json = require('koa-json')
-const path = require('path');
 const koaBody = require('koa-body');
-const koaStatic = require('koa-static');
-const todoRouter = require('./routers/todo');
+const newsRouter = require('./src/routers/news');
 const views = require('koa-views')
 const onerror = require('koa-onerror');
-  
-const index = require('./routers/index');
-const users = require('./routers/users');
+const koaStatic = require('koa-static');
+const index = require('./src/routers/index');
+const koaCompose = require("koa-compose");
 
 
 // error handler
 onerror(app);
 
 // global middlewares
+app.use(koaStatic(__dirname + '/public'))
+// app.use(require('koa-static')(__dirname + '/public'));
 app.use(views('views', {
   root: __dirname + '/views',
   default: 'jade'
@@ -25,14 +25,12 @@ app.use(require('koa-bodyparser')());
 app.use(json());
 app.use(logger());
 
-app.use(function *(next){
-  var start = new Date;
-  yield next;
-  var ms = new Date - start;
-  console.log('%s %s - %s', this.method, this.url, ms);
-});
-
-app.use(require('koa-static')(__dirname + '/public'));
+// app.use(function *(next){
+//   var start = new Date;
+//   yield next;
+//   var ms = new Date - start;
+//   console.log('%s %s - %s', this.method, this.url, ms);
+// });
 
 // error-handling
 app.on('error', (err, ctx) => {
@@ -62,10 +60,9 @@ app.use(async function errorHandler(ctx, next) {
 // 为应用使用路由定义
 // routes definition
 app.use(index.routes(), index.allowedMethods());
-app.use(users.routes(), users.allowedMethods());
 
 // 使用待办事项业务路由
-app.use(todoRouter);
+app.use(koaCompose([newsRouter]));
 
 
 module.exports = app;

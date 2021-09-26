@@ -1,0 +1,25 @@
+extends layout
+
+block append links
+  link(rel='stylesheet', href='/stylesheets/news.css')
+
+block content
+  header
+    div.container.is-flex.is-between
+      div.logo
+        h1 掘金前端日报
+      div.month.is-flex.is-middle
+        span=date
+        i
+  main.container.is-flex.is-center
+    div.is-10
+      ul.news-list
+        each item in data
+          li
+            a(target="_blank", href=""+item.link)
+              h2
+                span= item.title
+              p=item.description
+              div.is-flex.is-between
+                span= '浏览量：' + item.read
+                span.like= item.like

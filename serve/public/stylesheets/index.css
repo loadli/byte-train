@@ -1,0 +1,87 @@
+@charset "utf-8";
+.container {
+  padding-top: 3em;
+}
+
+aside {
+  position: sticky;
+  top: 3em;
+  height: calc(100vh - 3em);
+}
+
+header {
+  margin-bottom: 2em;
+}
+
+nav {
+  display: inline-block;
+  margin-left: 3em;
+}
+
+.month-list {
+  width: 40%;
+  padding: 1em;
+  border-radius: 8px;
+  flex-wrap: wrap;
+  background-color: #e8f3ff;
+}
+
+.month-list > li {
+  width: 50%;
+  text-align: center;
+  padding: 1em 0.6em;
+}
+.month-list .active {
+  font-weight: bold;
+  position: relative;
+}
+.month-list .active::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  left: calc(50% - 1em);
+  bottom: 0.6em;
+  height: 4px;
+  width: 2em;
+  background-color: #0e79ec;
+}
+
+main {
+  padding-top: 3em;
+  padding-left: 3em;
+  padding-bottom: 3em;
+  border-left: 4px solid #ebebeb;
+  background-repeat: no-repeat;
+  background-position: 90% 90%;
+  background-image: url(../images/yoyo.png);
+  background-attachment: fixed;
+}
+
+.date-list > li span {
+  display: inline-block;
+  font-size: 1.2em;
+  margin-bottom: 1em;
+  margin-right: 2em;
+  color: #585a5e;
+  border-bottom: 4px solid rgba(0, 0, 0, 0);
+}
+.date-list > li a {
+  visibility: hidden;
+  display: inline-block;
+  text-decoration: none;
+  background-color: #0e79ec;
+  color: #fff;
+  padding: 0.4em 1em;
+  border-radius: 4px;
+}
+.date-list > li a:hover {
+  cursor: pointer;
+  background-color: #419bfc;
+}
+
+.date-list > li:hover span {
+  border-bottom: 4px solid #0e79ec;
+}
+.date-list > li:hover a {
+  visibility: inherit;
+}

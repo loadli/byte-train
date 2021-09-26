@@ -1,0 +1,140 @@
+@charset "utf-8";
+
+/*
+ * 公共样式
+ */
+
+.is-flex {
+  display: flex;
+}
+
+.is-inline-flex {
+  display: inline-flex;
+}
+
+.is-column {
+  flex-flow: column;
+}
+
+.is-center {
+  justify-content: center;
+}
+
+.is-middle {
+  align-items: center;
+}
+
+.is-between {
+  justify-content: space-between;
+}
+
+.is-end {
+  justify-content: flex-end;
+}
+
+.is-fixed {
+  position: fixed;
+}
+
+.is-sticky {
+  position: sticky;
+  top: 0;
+}
+
+.is-blur {
+  background: hsla(0, 0%, 100%, 0.6);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+/* 栅格 */
+.is-1 {
+  flex: none;
+  width: 8.33333%;
+}
+.is-2 {
+  flex: none;
+  width: 16.66667%;
+}
+.is-3 {
+  flex: none;
+  width: 25%;
+}
+.is-4 {
+  flex: none;
+  width: 33.33333%;
+}
+.is-5 {
+  flex: none;
+  width: 41.66667%;
+}
+.is-6 {
+  flex: none;
+  width: 50%;
+}
+.is-7 {
+  flex: none;
+  width: 58.33333%;
+}
+.is-8 {
+  flex: none;
+  width: 66.66667%;
+}
+.is-9 {
+  flex: none;
+  width: 75%;
+}
+.is-10 {
+  flex: none;
+  width: 83.33333%;
+}
+.is-11 {
+  flex: none;
+  width: 91.66667%;
+}
+.is-12 {
+  flex: none;
+  width: 100%;
+}
+
+.offset-4 {
+  margin-left: 33.33333%;
+}
+/* 
+ * -------------------------------------------------
+ */
+
+.container {
+  flex-grow: 1;
+  position: relative;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin: 0 auto;
+}
+
+.logo {
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-image: url(../images/logo.svg);
+  padding-left: 3em;
+}
+
+.logo > h1 {
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+.month {
+  font-size: 1.2em;
+  padding-right: 1em;
+}
+.month > i {
+  width: 1.6em;
+  height: 1.6em;
+  margin-left: 0.5em;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: cover;
+  background-image: url(../images/calendar.svg);
+}
