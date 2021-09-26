@@ -1,6 +1,7 @@
 const newsTable = require('../models/newsTable');
 const stateTable = require('../models/stateTable');
 const inspirecloud = require('@byteinspire/api');
+const dayjs = require('dayjs')
 const ObjectId = inspirecloud.db.ObjectId;
 
 class newsService {
@@ -13,7 +14,8 @@ class newsService {
     }
     let set = []
     const filterData = Array.from(data).filter(items => {
-      let time = (new Date(items.time)).toLocaleDateString()
+      let time = dayjs(items.time).format('YYYY-MM-DD')
+      console.log(time, set)
       if (set.includes(time)) {
         return false
       } else {
