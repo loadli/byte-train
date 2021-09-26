@@ -17,12 +17,13 @@ router.get('/', function* (next) {
 })
 
 router.get('/news/:date', function* (next) {
-  
-  console.log(this.params);
-  const data = newsService.daily()
+  const { date } = this.params
+  // console.log(object);
+  const data = newsService.daily(date)
   yield this.render('news', {
     title: '掘金前端日报',
     data,
+    date: dayjs(date).format('YYYY-MM-DD')
   })
 })
 
