@@ -1,4 +1,5 @@
 const newsTable = require('../models/newsTable');
+const stateTable = require('../models/stateTable');
 const inspirecloud = require('@byteinspire/api');
 const ObjectId = inspirecloud.db.ObjectId;
 
@@ -10,14 +11,22 @@ class newsService {
       error.status = 404;
       throw error;
     }
-    return data
+    let set = []
+    const filterData = Array.from(data).filter(items => {
+      let time = (new Date(items.time)).toLocaleDateString()
+      console.log(time, typeof time)
+      if (set.includes(time)) {
+        return false
+      } else {
+        set.push(time)
+        return true
+      }
+    })
+    console.log(filterData.length, data.length)
+    return filterData
   }
   async daily({ date, read, like }) {
-    const data = await newsTable.where({
-      time: date,
-      read,
-      like,
-    }).find()
+    const data = await newsTable.where().find()
     if (!data) {
       const error = new Error(`news:${id} not found`);
       error.status = 404;
@@ -43,6 +52,11 @@ class newsService {
       like,
       link
     })
+  }
+  async state() {
+    const data = await stateTable.where().findOne()
+    console.log(data)
+    return data
   }
 
 }
