@@ -2,13 +2,13 @@ var router = require('koa-router')();
 
 router.get('/', function *(next) {
   yield this.render('index', {
-    title: 'Hello World Koa!'
+    title: '掘金前端日报'
   });
 });
 
 router.get('/news', function *(next) {
   yield this.render('news', {
-    title: 'Hello World foo!'
+    title: '掘金前端日报'
   });
 });
 
