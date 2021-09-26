@@ -1,5 +1,37 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  div.container.is-flex
+    aside.is-4
+      header.is-flex.is-between
+        div.logo
+          h1 掘金前端日报
+        div.month.is-flex.is-middle
+          span 9月
+          i
+      nav
+        ul.month-list.is-flex
+          li 1月
+          li 2月
+          li 3月
+          li 4月
+          li 5月
+          li 6月
+          li 7月
+          li 8月
+          li.active 9月
+          li 10月
+          li 11月
+          li 12月
+    main.is-8
+      ul.date-list
+        li
+          span 2021-09-01
+          a(target="_blank", href="#") 查看日报
+        li
+          span 2021-09-01
+          a(target="_blank", href="#") 查看日报
+        li
+          span 2021-09-01
+          a(target="_blank", href="https://baidu.com") 百度
+
