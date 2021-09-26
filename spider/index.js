@@ -2,7 +2,7 @@
  * @Author       : xiaolin
  * @Date         : 2021-09-25 19:54:20
  * @LastEditors  : xiaolin
- * @LastEditTime : 2021-09-25 22:43:41
+ * @LastEditTime : 2021-09-26 14:29:26
  * @Description  : 爬虫程序
  * @FilePath     : \byte-train\spider\index.js
  */
@@ -86,6 +86,7 @@ const config = require('./config')
         describe: $(item).find(configInPage.$describe).text().trim(),
         view    : $(item).find(configInPage.$view).text().trim(),
         like    : $(item).find(configInPage.$like).text().trim(),
+        link    : "https://juejin.cn" + $(item).find(configInPage.$title).attr("href").trim()
       }
       data.push(_obj)
     })
