@@ -32,6 +32,7 @@ class newsService {
     time,
     read,
     like,
+    link
   }) {
     return await newsTable.save({
       title,
@@ -40,6 +41,7 @@ class newsService {
       time,
       read,
       like,
+      link
     })
   }
 

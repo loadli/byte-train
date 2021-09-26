@@ -19,8 +19,8 @@ class NewsController {
     }
   }
   async save(ctx) {
-    const { title = '', description = '', month = '', time = Date.now() } = ctx.request.body
-    const res = await newsService.save({ title, description, month, time })
+    const { title = '', description = '', month = '', time = (new Date).toLocaleDateString(), link = '', read = 0, like = 0 } = ctx.request.body
+    const res = await newsService.save({ title, description, month, time, link, read, like })
     ctx.body = {
       code: "200",
       message: "请求成功",
