@@ -16,10 +16,10 @@ block content
       ul.news-list
         each item in data
           li
-          a(target="_blank", href=item.link)
+            a(target="_blank", href=""+item.link)
               h2
                 span= item.title
               p=item.description
               div.is-flex.is-between
                 span= '浏览量：' + item.read
-                span.like= item.like                                      
+                span.like= item.like
