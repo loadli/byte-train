@@ -9,6 +9,7 @@ const newsController = require('../controllers/newsController');
 // 组装路由
 router.get('/all', newsController.all);
 router.get('/daily', newsController.daily);
+router.get('/state', newsController.state);
 router.post('/save', newsController.save);
 
 // Koa 的路由需要调用 routes 函数获取实际用于 use 的函数

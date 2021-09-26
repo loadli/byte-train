@@ -1,4 +1,5 @@
 const newsTable = require('../models/newsTable');
+const stateTable = require('../models/stateTable');
 const inspirecloud = require('@byteinspire/api');
 const ObjectId = inspirecloud.db.ObjectId;
 
@@ -43,6 +44,11 @@ class newsService {
       like,
       link
     })
+  }
+  async state() {
+    const data = await stateTable.where().findOne()
+    console.log(data)
+    return data
   }
 
 }
