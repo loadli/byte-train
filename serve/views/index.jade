@@ -31,5 +31,5 @@ block content
         each item in data
           li
             span= item.time
-            a(target="_blank", href="#") 查看日报
+            a(target="_blank", href="/news/daily?date=" + item.time.replace(/-/g,'') + "&read=1&like=1") 查看日报
 
