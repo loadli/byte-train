@@ -37,8 +37,7 @@ class newsService {
       let time = (new Date(items.time)).toLocaleDateString()
       return wantDate === time
     })
-    console.log(filterData[0])
-    return filterData[0]
+    return filterData
   }
   async save({
     title,

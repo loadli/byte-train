@@ -9,40 +9,17 @@ block content
       div.logo
         h1 掘金前端日报
       div.month.is-flex.is-middle
-        span 2021-09-01
+        span=date
         i
   main.container.is-flex.is-center
     div.is-10
       ul.news-list
-        li
-         a(target="_blank", href="#")
-            h2
-              span 前端必知必会|学SVG看这篇就够了（二）
-            p Vuex是一个很棒的状态管理库，它简单易懂，且与Vue集成良好。为什么不直接使用Vuex？因为即将发布的Vue3公开了底层的响应式系统，并引入了构建应用程序的新方法。新的响应式系统功能强大，可用于共享状态管理。 在某些情况下，多个组件之间数据共享困难，以至于需要集中的状态管理。…
-            div.is-flex.is-between
-              span 浏览量：100
-              span.like 371
-        li
-         a(target="_blank", href="#")
-            h2
-              span 前端必知必会|学SVG看这篇就够了（二）
-            p Vuex是一个很棒的状态管理库，它简单易懂，且与Vue集成良好。为什么不直接使用Vuex？因为即将发布的Vue3公开了底层的响应式系统，并引入了构建应用程序的新方法。新的响应式系统功能强大，可用于共享状态管理。 在某些情况下，多个组件之间数据共享困难，以至于需要集中的状态管理。…
-            div.is-flex.is-between
-              span 浏览量：100
-              span.like 371
-        li
-         a(target="_blank", href="#")
-            h2
-              span 前端必知必会|学SVG看这篇就够了（二）
-            p Vuex是一个很棒的状态管理库，它简单易懂，且与Vue集成良好。为什么不直接使用Vuex？因为即将发布的Vue3公开了底层的响应式系统，并引入了构建应用程序的新方法。新的响应式系统功能强大，可用于共享状态管理。 在某些情况下，多个组件之间数据共享困难，以至于需要集中的状态管理。…
-            div.is-flex.is-between
-              span 浏览量：100
-              span.like 371
-        li
-         a(target="_blank", href="#")
-            h2
-              span 前端必知必会|学SVG看这篇就够了（二）
-            p Vuex是一个很棒的状态管理库，它简单易懂，且与Vue集成良好。为什么不直接使用Vuex？因为即将发布的Vue3公开了底层的响应式系统，并引入了构建应用程序的新方法。新的响应式系统功能强大，可用于共享状态管理。 在某些情况下，多个组件之间数据共享困难，以至于需要集中的状态管理。…
-            div.is-flex.is-between
-              span 浏览量：100
-              span.like 371                                          
+        each item in data
+          li
+            a(target="_blank", href=""+item.link)
+              h2
+                span= item.title
+              p=item.description
+              div.is-flex.is-between
+                span= '浏览量：' + item.read
+                span.like= item.like
