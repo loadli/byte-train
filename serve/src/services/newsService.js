@@ -14,7 +14,6 @@ class newsService {
     let set = []
     const filterData = Array.from(data).filter(items => {
       let time = (new Date(items.time)).toLocaleDateString()
-      console.log(time, typeof time)
       if (set.includes(time)) {
         return false
       } else {
@@ -22,7 +21,6 @@ class newsService {
         return true
       }
     })
-    console.log(filterData.length, data.length)
     return filterData
   }
   async daily({ date, read, like }) {
@@ -32,7 +30,13 @@ class newsService {
       error.status = 404;
       throw error;
     }
-    return data
+    let wantDate = (new Date(date)).toLocaleDateString()
+    const filterData = Array.from(data).filter(items => {
+      let time = (new Date(items.time)).toLocaleDateString()
+      return wantDate === time
+    })
+    console.log(filterData[0])
+    return filterData[0]
   }
   async save({
     title,
