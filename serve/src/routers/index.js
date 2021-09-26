@@ -16,7 +16,9 @@ router.get('/', function* (next) {
   })
 })
 
-router.get('/news', function* (next) {
+router.get('/news/:date', function* (next) {
+  
+  console.log(this.params);
   const data = newsService.daily()
   yield this.render('news', {
     title: '掘金前端日报',
