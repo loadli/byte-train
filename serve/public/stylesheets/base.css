@@ -9,42 +9,42 @@
 }
 
 .is-inline-flex {
-    display: inline-flex;
+  display: inline-flex;
 }
 
 .is-column {
-    flex-flow: column;
+  flex-flow: column;
 }
 
 .is-center {
-    justify-content: center;
+  justify-content: center;
 }
 
 .is-middle {
-    align-items: center;
+  align-items: center;
 }
 
 .is-between {
-    justify-content: space-between;
+  justify-content: space-between;
 }
 
 .is-end {
-    justify-content: flex-end;
+  justify-content: flex-end;
 }
 
 .is-fixed {
-    position: fixed;
+  position: fixed;
 }
 
 .is-sticky {
-    position: sticky;
-    top: 0;
+  position: sticky;
+  top: 0;
 }
 
 .is-blur {
-    background: hsla(0, 0%, 100%, 0.6);
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
+  background: hsla(0, 0%, 100%, 0.6);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 }
 
 /* 栅格 */
@@ -97,7 +97,7 @@
   width: 100%;
 }
 
-.offset-4{
+.offset-4 {
   margin-left: 33.33333%;
 }
 /* 
@@ -122,4 +122,19 @@
 .logo > h1 {
   font-size: 1.8em;
   font-weight: bold;
+}
+
+.month {
+  font-size: 1.2em;
+  padding-right: 1em;
+}
+.month > i {
+  width: 1.6em;
+  height: 1.6em;
+  margin-left: 0.5em;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: cover;
+  background-image: url(../images/calendar.svg);
 }
