@@ -14,11 +14,7 @@ class newsService {
     return data
   }
   async daily({ date, read, like }) {
-    const data = await newsTable.where({
-      time: date,
-      read,
-      like,
-    }).find()
+    const data = await newsTable.where().find()
     if (!data) {
       const error = new Error(`news:${id} not found`);
       error.status = 404;
