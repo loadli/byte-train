@@ -18,7 +18,7 @@ router.get('/', function* (next) {
 
 router.get('/news/:date', function* (next) {
   const { date } = this.params
-  const data = yield newsService.daily(date)
+  const data = yield newsService.daily({ date: dayjs(date).format('YYYY-MM-DD') })
   yield this.render('news', {
     title: '掘金前端日报',
     data,

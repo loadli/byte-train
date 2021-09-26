@@ -32,10 +32,8 @@ class newsService {
       error.status = 404;
       throw error;
     }
-    let wantDate = (new Date(date)).toLocaleDateString()
     const filterData = Array.from(data).filter(items => {
-      let time = (new Date(items.time)).toLocaleDateString()
-      return wantDate === time
+        return dayjs(items.time).format('YYYY-MM-DD') === date
     })
     return filterData
   }
